@@ -7,11 +7,19 @@ public class Ad : MonoBehaviour {
 	enum AdState{Unclicked, Clicked, Succeeded, Failed};
 	AdState currState;
 	SpriteRenderer renderer;
+	Sprite adImage;
+	Sprite gameBackground;
+
+	Ad(Sprite adImage, Sprite gameBackground){
+		this.adImage = adImage;
+		this.gameBackground = gameBackground;
+	}
 
 	// Use this for initialization
 	void Start () {
 		currState = AdState.Unclicked;
 		renderer = GetComponent<SpriteRenderer>();
+		renderer.sprite = adImage;
 	}
 	
 	// Update is called once per frame
@@ -25,7 +33,8 @@ public class Ad : MonoBehaviour {
 	/// </summary>
 	void OnMouseDown()
 	{
-		
+		renderer.sprite = gameBackground;
+		currState = AdState.Clicked;
 	}
 
 	//This function is called when the player wins the corresponding minigame. 
