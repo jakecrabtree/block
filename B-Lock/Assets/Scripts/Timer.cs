@@ -13,4 +13,8 @@ public class Timer : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	void DecreaseTime(int amount){
+		
+	}
 }

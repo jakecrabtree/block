@@ -122,11 +122,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4688503392719504, guid: bafa92e32f12047a68c99a027db5a5ef, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.018
+      value: -0.122
       objectReference: {fileID: 0}
     - target: {fileID: 4688503392719504, guid: bafa92e32f12047a68c99a027db5a5ef, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.032
+      value: -0.307
       objectReference: {fileID: 0}
     - target: {fileID: 4688503392719504, guid: bafa92e32f12047a68c99a027db5a5ef, type: 2}
       propertyPath: m_LocalPosition.z
@@ -154,11 +154,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4688503392719504, guid: bafa92e32f12047a68c99a027db5a5ef, type: 2}
       propertyPath: m_LocalScale.y
-      value: 2.4867938
+      value: 6.10185
       objectReference: {fileID: 0}
     - target: {fileID: 4688503392719504, guid: bafa92e32f12047a68c99a027db5a5ef, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.941617
+      value: 6.4933577
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bafa92e32f12047a68c99a027db5a5ef, type: 2}
@@ -211,7 +211,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.0505495
+  orthographic size: 11.668195
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -240,6 +240,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &862048532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1402445491555842, guid: 7e50383316e554e67a9ac4ff5e7b1c94,
+    type: 2}
+  m_PrefabInternal: {fileID: 866558132}
+--- !u!114 &862048533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 862048532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4622df33428d64671bc4ae33e771e1bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &866558132
 Prefab:
   m_ObjectHideFlags: 0
@@ -249,11 +265,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4577796247164054, guid: 7e50383316e554e67a9ac4ff5e7b1c94, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.84
+      value: -12.98
       objectReference: {fileID: 0}
     - target: {fileID: 4577796247164054, guid: 7e50383316e554e67a9ac4ff5e7b1c94, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.03
+      value: 4.98
       objectReference: {fileID: 0}
     - target: {fileID: 4577796247164054, guid: 7e50383316e554e67a9ac4ff5e7b1c94, type: 2}
       propertyPath: m_LocalPosition.z
@@ -281,11 +297,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4577796247164054, guid: 7e50383316e554e67a9ac4ff5e7b1c94, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.674
+      value: 1.052788
       objectReference: {fileID: 0}
     - target: {fileID: 4577796247164054, guid: 7e50383316e554e67a9ac4ff5e7b1c94, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.652
+      value: 0.98843205
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e50383316e554e67a9ac4ff5e7b1c94, type: 2}
