@@ -1,23 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using System.IO;
 using System.Text;
 using UnityEngine;
 
 public class AdManager : MonoBehaviour {
 
-	string resourcesPath = "Sprites" + Path.DirectorySeparatorChar + "Ads" + Path.DirectorySeparatorChar;
-	string[] adImageNames = {"default_singles"};
-	List<Sprite> adSprites;
+	string adImagesPath = "Sprites" + Path.DirectorySeparatorChar + "Ads";
+	string gameBackgroundPath = "Prefabs" + Path.DirectorySeparatorChar + "GameBackgrounds";
+	Sprite[] adSprites;
+	GameObject[] gameBackgrounds;
 	int numAdSprites;
 
 	// Use this for initialization
 	void Start () {
-		foreach (string name in adImageNames){
-			string adImagePath = new StringBuilder(resourcesPath).Append(name).ToString();
-			adSprites.Add(Resources.Load<Sprite>(adImagePath));
-		}
-		numAdSprites = adSprites.Count;
+		adSprites = Resources.LoadAll<Sprite>(adImagesPath);
+		gameBackgrounds = Resources.LoadAll<GameObject>(gameBackgroundPath);
+		numAdSprites = adSprites.Length;
 	}
 	
 	// Update is called once per frame
@@ -26,7 +26,9 @@ public class AdManager : MonoBehaviour {
 	}
 
 	void CreateAd(Vector2 position){
-		
+		int randomIndex = Random.Range(0,numAdSprites);
+		Sprite randomAdImage = adSprites[randomIndex];
+
 	}
 
 }

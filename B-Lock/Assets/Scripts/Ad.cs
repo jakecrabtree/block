@@ -10,10 +10,12 @@ public class Ad : MonoBehaviour {
 	Sprite adImage;
 	Sprite gameBackground;
 
-	Ad(Sprite adImage, Sprite gameBackground){
+	//Initialize the ad with its given ad image
+	public void Initialize(Sprite adImage, Sprite gameBackground){
 		this.adImage = adImage;
 		this.gameBackground = gameBackground;
 	}
+
 
 	// Use this for initialization
 	void Start () {
