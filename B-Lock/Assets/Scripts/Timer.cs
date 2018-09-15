@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour {
 
-    float timeLeft = 60;
+    float timeLeft = 4;
+    Boolean reachedZero = false;
     Text timeRemainingText;
 	// Use this for initialization
 	void Start () {
@@ -15,11 +16,25 @@ public class Timer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        timeLeft -= Time.deltaTime;
-        timeRemainingText.text = Math.Round(timeLeft, 2).ToString();
+        if(timeLeft > 0)
+        {
+            timeLeft -= Time.deltaTime;
+            timeRemainingText.text = Math.Round(timeLeft, 2).ToString();
+        }
+        else if(!reachedZero)
+        {
+            timesUp();
+            reachedZero = true;
+        }
+
+        
 	}
 
 	void DecreaseTime(int amount){
         timeLeft -= amount;
 	}
+
+    void timesUp() {
+     
+    }
 }
