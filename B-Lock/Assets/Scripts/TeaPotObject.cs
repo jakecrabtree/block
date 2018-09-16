@@ -12,7 +12,7 @@ public class TeaPotObject : MonoBehaviour {
 
     Ad ad;
 
-    double timeLeft = 1.5;
+    double timeLeft = 2.5;
     float delayAfterClick = 2;
     Boolean clicked = false;
 
