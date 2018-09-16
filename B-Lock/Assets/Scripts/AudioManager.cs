@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour {
 	string pathToMusic = "Music" + Path.DirectorySeparatorChar;
 	string[] audioFileNames = {"B-Lock Home Screen Music", "B-Lock Background music",
 								"B-Lock Failure Music", "B-Lock Victory music", 
-								"B-Lock Mess Up Sound"};
+								"B-Lock Mess Up Sound", "CorrectSound"};
 
 	AudioSource audioSource;
 	AudioSource soundSource;
@@ -47,13 +47,19 @@ public class AudioManager : MonoBehaviour {
 
 	public void playVictoryMusic(){
 		playClip(3);
-		Invoke("playHomeMusic",clips[2].length);
+		Invoke("playHomeMusic",clips[3].length);
 	}
 
 	public void playMessUpSound(){
 		soundSource.clip = clips[4];
 		soundSource.Play();
 		Invoke("playBackgroundMusic",clips[4].length);
+	}
+
+	public void playSuccessSound(){
+		soundSource.clip = clips[5];
+		soundSource.Play();
+		Invoke("playBackgroundMusic",clips[5].length);
 	}
 
 	// Use this for initialization
