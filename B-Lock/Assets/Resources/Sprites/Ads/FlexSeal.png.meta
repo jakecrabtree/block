@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c661f2a7f242e4ddebb62feb9ec9503c
+guid: 785f86921bde8304a80d5174f82453e5
 TextureImporter:
   fileIDToRecycleName:
     21300000: FlexSeal_0
@@ -150,7 +150,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 16db6276c3a154b1789145eaa73c5088
+    spriteID: 20d431167e40d034a96334d12841e105
     vertices: []
     indices: 
     edges: []
