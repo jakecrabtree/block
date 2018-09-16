@@ -9,14 +9,14 @@ public class AdManager : MonoBehaviour {
 
 	public static AdManager manager = null;
 	PageManager pageManager;
-	string adImagesPath = "Sprites" + Path.DirectorySeparatorChar + "Ads";
+	string adImagesPath = "Prefabs" + Path.DirectorySeparatorChar + "AdImages";
 	string gameBackgroundPath = "Sprites" + Path.DirectorySeparatorChar + 
 									"GameBackgrounds" + Path.DirectorySeparatorChar;
 	string adGamePrefabsPath = "Prefabs" + Path.DirectorySeparatorChar + 
 									"AdGames" + Path.DirectorySeparatorChar;
 	string[] gameBackgroundFolders = {"Squares", "Banners", "Rectangles"};
 	float[] adRatios = {1f, 0.2f, 1.333f};
-	Sprite[] adSprites;
+	GameObject[] adSprites;
 	Sprite[][] gameBackgrounds;
 	GameObject[] adGamePrefabs;
 
@@ -28,7 +28,7 @@ public class AdManager : MonoBehaviour {
 		else if (manager != this){
 			Destroy(this.gameObject);
 		}
-		adSprites = Resources.LoadAll<Sprite>(adImagesPath);
+		adSprites = Resources.LoadAll<GameObject>(adImagesPath);
 		int currentFolder = 0;
 		gameBackgrounds = new Sprite[gameBackgroundFolders.Length][];
 		foreach(string folder in gameBackgroundFolders){
@@ -51,11 +51,12 @@ public class AdManager : MonoBehaviour {
 	public void CreateAd(Vector2 position, int order){
 		//Get random ad image from list generated in start()
 		int randomIndex = Random.Range(0,adSprites.Length);
-		Sprite randomAdImage = adSprites[randomIndex];
+		GameObject randomAdImage = adSprites[randomIndex];
+		Sprite randomAdImageSprite = randomAdImage.GetComponent<SpriteRenderer>().sprite;
 
 		//Calculate size ratio and pick which defined one it corresponds to
-		float spriteWidth = randomAdImage.rect.width/randomAdImage.pixelsPerUnit;
-		float spriteLength = randomAdImage.rect.height/randomAdImage.pixelsPerUnit;
+		float spriteWidth = randomAdImageSprite.rect.width/randomAdImageSprite.pixelsPerUnit;
+		float spriteLength = randomAdImageSprite.rect.height/randomAdImageSprite.pixelsPerUnit;
 		float spriteRatio = spriteLength/spriteWidth;
 
 		float minRatio = 1000000f;
@@ -77,12 +78,17 @@ public class AdManager : MonoBehaviour {
 		GameObject newAdObject = Instantiate(adGamePrefabs[randomIndex],position,Quaternion.identity);
 		newAdObject.GetComponent<Renderer>().sortingOrder = 0;
 		newAdObject.GetComponent<Renderer>().sortingLayerName = "Ad";
+		Animator animator = randomAdImage.GetComponent<Animator>();
+		if (animator != null){
+			newAdObject.AddComponent<Animator>().runtimeAnimatorController = animator.runtimeAnimatorController;
+		}
+
 
 		BoxCollider2D collider = newAdObject.AddComponent<BoxCollider2D>();
 		collider.size = new Vector2(spriteWidth,spriteLength);
 
 		//Initialize Ad
-		newAdObject.GetComponent<Ad>().Initialize(randomAdImage,backgroundSprite,this, (Ad.AdShape)whichRatio,spriteWidth,spriteLength);
+		newAdObject.GetComponent<Ad>().Initialize(randomAdImageSprite,backgroundSprite,this, (Ad.AdShape)whichRatio,spriteWidth,spriteLength);
 	}
 
 	public void AdCompleted(Ad ad, bool succeeded){
