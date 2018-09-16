@@ -13,7 +13,8 @@ public class TeaPotObject : MonoBehaviour {
     Ad ad;
 
     double timeLeft = 1.5;
-    
+    float delayAfterClick = 2;
+    Boolean clicked = false;
 
     // Use this for initialization
     public void Initialize(Ad ad)
@@ -27,16 +28,24 @@ public class TeaPotObject : MonoBehaviour {
                                         Path.DirectorySeparatorChar + "Do Not Click - NOT BROKEN");
         TPSPriteBroke = Resources.Load<Sprite>("Sprites" + Path.DirectorySeparatorChar + "Buttons" +
                                         Path.DirectorySeparatorChar + "Do Not Click - BROKEN");
+        sr.sprite = TPSpriteNotBroke;
         GetComponentInChildren<TextMesh>().text = "1.5";
     }
 
     // Update is called once per frame
     void Update () {
-        if (timeLeft > 0)
+
+        if(clicked)
+        {
+            delayAfterClick -= Time.deltaTime;
+
+            if (delayAfterClick <= 0)
+                endSelf();
+        }
+        else if (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
             GetComponentInChildren<TextMesh>().text = Math.Round(timeLeft, 0).ToString();
-
         }
         else
         {
@@ -46,6 +55,12 @@ public class TeaPotObject : MonoBehaviour {
     }
 
     void OnMouseDown()
+    {
+        clicked = true;
+        sr.sprite = TPSPriteBroke;
+    }
+
+    void endSelf()
     {
         ad.OnFailure();
     }
