@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 3d33cc30a53b377459c9be5097bd1030
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: HOTSINGLES_0
+    21300002: HOTSINGLES_1
+    21300004: HOTSINGLES_2
+    21300006: HOTSINGLES_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -40,7 +44,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -104,11 +108,91 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: HOTSINGLES_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1003
+        height: 1000
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65bfb32281d42d468935d517bb62fb4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOTSINGLES_1
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 0
+        width: 996
+        height: 1000
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afff0ddefcfe29d46abaefeffdec36a8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOTSINGLES_2
+      rect:
+        serializedVersion: 2
+        x: 2007
+        y: 0
+        width: 996
+        height: 1000
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 677b5a278cb4a404190b64d685fe615c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HOTSINGLES_3
+      rect:
+        serializedVersion: 2
+        x: 3007
+        y: 0
+        width: 993
+        height: 1000
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9128868524280f4796db0e73ab0499b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 90c335037548aab4c826c3f229a8b991
     vertices: []
     indices: 
     edges: []
