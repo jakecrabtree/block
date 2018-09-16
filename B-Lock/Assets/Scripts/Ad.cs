@@ -41,12 +41,12 @@ public class Ad : MonoBehaviour {
     }
 
 	//This function is called when the player wins the corresponding minigame. 
-	void OnSucceed(){
+	public void OnSucceed(){
 
 	}
 
 	//This function is called when the player loses or fails the corresponding minigame.
-	void OnFailure(){
+	public void OnFailure(){
 
 	}
 
