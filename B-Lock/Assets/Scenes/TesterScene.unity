@@ -113,6 +113,84 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &280036463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 280036464}
+  - component: {fileID: 280036466}
+  - component: {fileID: 280036465}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &280036464
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 280036463}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.8837996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 865420844}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.11429354, y: 0.11019014}
+  m_AnchorMax: {x: 0.87955195, y: 0.24970101}
+  m_AnchoredPosition: {x: 2.9057193, y: 3.7453542}
+  m_SizeDelta: {x: 152.3488, y: 28.590736}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &280036465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 280036463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 1
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 41
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Big Text
+
+
+'
+--- !u!222 &280036466
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 280036463}
+  m_CullTransparentMesh: 0
 --- !u!1 &513125322
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +239,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 884.861
+  orthographic size: 252.37408
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -236,14 +314,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 1.8837996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1924500118}
+  - {fileID: 856077172}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1422.1, y: 662.8}
-  m_SizeDelta: {x: 1131.1, y: 458.9}
+  m_AnchoredPosition: {x: -66, y: 28}
+  m_SizeDelta: {x: 984, y: 440.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &856077171
 Prefab:
@@ -345,6 +423,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3281f5323bf152429fbf657271fa670, type: 2}
   m_IsPrefabAsset: 0
+--- !u!224 &856077172 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224414807018424746, guid: c3281f5323bf152429fbf657271fa670,
+    type: 2}
+  m_PrefabInternal: {fileID: 856077171}
 --- !u!1 &865420839
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,13 +545,14 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 280036464}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.86, y: -0.88}
+  m_AnchoredPosition: {x: -19.31, y: -2.35}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1540015466
@@ -511,8 +595,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &1924500118 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224392127634882220, guid: c3281f5323bf152429fbf657271fa670,
-    type: 2}
-  m_PrefabInternal: {fileID: 856077171}
