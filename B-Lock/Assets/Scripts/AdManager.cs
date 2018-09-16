@@ -14,8 +14,8 @@ public class AdManager : MonoBehaviour {
 									"GameBackgrounds" + Path.DirectorySeparatorChar;
 	string adGamePrefabsPath = "Prefabs" + Path.DirectorySeparatorChar + 
 									"AdGames" + Path.DirectorySeparatorChar;
-	string[] gameBackgroundFolders = {"Squares", "Banners", "Rectangles"};
-	float[] adRatios = {1f, 0.2f, 1.333f};
+	string[] gameBackgroundFolders = {/*"Squares", "Banners",*/ "Rectangles"};
+	float[] adRatios = {/*1f, 0.2f,*/ 1.333f};
 	Sprite[] adSprites;
 	Sprite[][] gameBackgrounds;
 	GameObject[] adGamePrefabs;
