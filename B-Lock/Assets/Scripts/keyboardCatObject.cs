@@ -28,15 +28,15 @@ public class keyboardCatObject : MonoBehaviour {
         string temp = wordBank[randomIndex];
         temp = temp.ToLower();
         textHolder.GetComponent<TextMesh>().text = temp;
-
-        Debug.Log("hi");
     }
 
     // Update is called once per frame
     void Update () {
         if (keyboardinputField.text == textHolder.GetComponent<TextMesh>().text)
         {
+            Debug.Log("hi");
             ad.OnSucceed();
+            Destroy(gameObject, 0);
         }
     }
 
