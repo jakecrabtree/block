@@ -37,7 +37,8 @@ public class Ad : MonoBehaviour {
 	{
 		renderer.sprite = gameBackground;
 		currState = AdState.Clicked;
-	}
+        OnClick();
+    }
 
 	//This function is called when the player wins the corresponding minigame. 
 	void OnSucceed(){
@@ -48,4 +49,9 @@ public class Ad : MonoBehaviour {
 	void OnFailure(){
 
 	}
+
+    void OnClick()
+    {
+
+    }
 }
