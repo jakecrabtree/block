@@ -19,6 +19,8 @@ public class BlockGameManager : MonoBehaviour {
 	int numLevels = 3;
 	int level = 0;
 
+	AudioManager audioManager;
+
 
 	/// <summary>
 	/// Awake is called when the script instance is being loaded.
@@ -43,9 +45,9 @@ public class BlockGameManager : MonoBehaviour {
         timerUIObject.GetComponentInChildren<Image>().color = new Color(oldColor.r, oldColor.g, oldColor.b, 0.0f);
 		timer = timerUIObject.GetComponentInChildren<Timer>();
 		timer.Initialize(this);
-        GameObject.FindGameObjectsWithTag("Music");
-        
-            }
+        audioManager = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioManager>();
+		audioManager.playBackgroundMusic();
+        }
     public void Mute()
     {
         AudioListener.pause = !AudioListener.pause;
@@ -64,6 +66,7 @@ public class BlockGameManager : MonoBehaviour {
 	public void AdCompleted(bool succeeded){
 		if (!succeeded){
 			timer.DecreaseTime(timePenalty);
+			audioManager.playMessUpSound();
 		}
 		if (--adCount == 0){
 			NextLevel();
@@ -81,10 +84,12 @@ public class BlockGameManager : MonoBehaviour {
 	public void GameOver(bool win){
 		if (win){
 			Debug.Log("Win!");
+			audioManager.playVictoryMusic();
             SceneManager.LoadScene(3);
             //Change Music
 		}else{
 			Debug.Log("Lose!");
+			audioManager.playFailureMusic();
             SceneManager.LoadScene(4);
             //Change Music
         }
