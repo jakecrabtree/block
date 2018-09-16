@@ -38,4 +38,8 @@ public class Letter : MonoBehaviour {
 	void OnDestroy()
 	{
 	}
+
+	void OnMouseEnter(){
+		Debug.Log(letter);
+	}
 }

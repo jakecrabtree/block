@@ -16,6 +16,10 @@ public class Ad : MonoBehaviour {
 	protected float adImageWidth;
 	protected float adImageLength;
 
+	bool initialized = false;
+	static int clickCount = 0;
+	static Ad topMostGame;
+
 	//Initialize the ad with its given ad image
 	public void Initialize(Sprite adImage, Sprite gameBackground, AdManager adManager, AdShape shape,float adImageWidth, float adImageLength){
 		this.adImage = adImage;
@@ -49,6 +53,15 @@ public class Ad : MonoBehaviour {
 	{
 		renderer.sprite = gameBackground;
 		currState = AdState.Clicked;
+		gameObject.GetComponent<Renderer>().sortingLayerName = "GameElement";
+		gameObject.GetComponent<Renderer>().sortingOrder = 2;
+		if (topMostGame != null){
+			topMostGame.GetComponent<Renderer>().sortingOrder = 0;
+			topMostGame.UpdateSortingOrder();
+			topMostGame.GetComponent<BoxCollider2D>().enabled = true;
+		}
+		topMostGame = this;
+		gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 
 	//This function is called when the player wins the corresponding minigame. 
@@ -59,6 +72,10 @@ public class Ad : MonoBehaviour {
 	//This function is called when the player loses or fails the corresponding minigame.
 	public void OnFailure(){
 		adManager.AdCompleted(this, false);
+	}
+
+	public virtual void UpdateSortingOrder(){
+
 	}
 
 }

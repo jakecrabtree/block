@@ -75,7 +75,8 @@ public class AdManager : MonoBehaviour {
 		//Get random game prefab
 		randomIndex = Random.Range(0,adGamePrefabs.Length);
 		GameObject newAdObject = Instantiate(adGamePrefabs[randomIndex],position,Quaternion.identity);
-		newAdObject.GetComponent<Renderer>().sortingOrder = 2*order;
+		newAdObject.GetComponent<Renderer>().sortingOrder = 0;
+		newAdObject.GetComponent<Renderer>().sortingLayerName = "Ad";
 
 		BoxCollider2D collider = newAdObject.AddComponent<BoxCollider2D>();
 		collider.size = new Vector2(spriteWidth,spriteLength);
