@@ -8,23 +8,27 @@ using UnityEngine;
 public class AdManager : MonoBehaviour {
 
 	string adImagesPath = "Sprites" + Path.DirectorySeparatorChar + "Ads";
-	string gameBackgroundPath = "Prefabs" + Path.DirectorySeparatorChar + 
+	string gameBackgroundPath = "Sprites" + Path.DirectorySeparatorChar + 
 									"GameBackgrounds" + Path.DirectorySeparatorChar;
+	string adGamePrefabsPath = "Prefabs" + Path.DirectorySeparatorChar + 
+									"AdGames" + Path.DirectorySeparatorChar;
 	string[] gameBackgroundFolders = {"1x1", "1x5", "3x2"};
 	float[] adRatios = {1f, 0.2f, 1.5f};
 	Sprite[] adSprites;
-	GameObject[][] gameBackgrounds;
+	Sprite[][] gameBackgrounds;
+	GameObject[] adGamePrefabs;
 
 	// Use this for initialization
 	void Start () {
 		adSprites = Resources.LoadAll<Sprite>(adImagesPath);
 		int currentFolder = 0;
-		gameBackgrounds = new GameObject[gameBackgroundFolders.Length][];
+		gameBackgrounds = new Sprite[gameBackgroundFolders.Length][];
 		foreach(string folder in gameBackgroundFolders){
 			string folderPath = new StringBuilder(gameBackgroundPath).Append(folder).ToString();
-			gameBackgrounds[currentFolder] = Resources.LoadAll<GameObject>(folderPath);
+			gameBackgrounds[currentFolder] = Resources.LoadAll<Sprite>(folderPath);
 			currentFolder++;
 		}
+		adGamePrefabs = Resources.LoadAll<GameObject>(adGamePrefabsPath);
 	}
 	
 	// Update is called once per frame
@@ -32,7 +36,7 @@ public class AdManager : MonoBehaviour {
 		
 	}
 
-	void CreateAd(Vector2 position){
+	public void CreateAd(Vector2 position){
 		//Get random ad image from list generated in start()
 		int randomIndex = Random.Range(0,adSprites.Length);
 		Sprite randomAdImage = adSprites[randomIndex];
@@ -51,13 +55,16 @@ public class AdManager : MonoBehaviour {
 			}
 		}
 		
-		//Get random ad prefab (Ad + Background Image)
+		//Get random game background image
 		randomIndex = Random.Range(0,gameBackgrounds[whichRatio].Length);
-		GameObject newAdObject = Instantiate(gameBackgrounds[whichRatio][randomIndex],position,Quaternion.identity);
+		Sprite backgroundSprite = gameBackgrounds[whichRatio][randomIndex];
+
+		//Get random game prefab
+		randomIndex = Random.Range(0,adGamePrefabs.Length);
+		GameObject newAdObject = Instantiate(adGamePrefabs[randomIndex],position,Quaternion.identity);
 
 		//Initialize Ad
-		Sprite newBackgroundImage = newAdObject.GetComponent<Sprite>();
-		newAdObject.GetComponent<Ad>().Initialize(randomAdImage,newBackgroundImage);
+		newAdObject.GetComponent<Ad>().Initialize(randomAdImage,backgroundSprite);
 	}
 
 }
