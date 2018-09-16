@@ -48,6 +48,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 75
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -124,7 +125,7 @@ TextureImporter:
       bones: []
       spriteID: 386022117f6304378a59d894a8b37b41
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -144,7 +145,7 @@ TextureImporter:
       bones: []
       spriteID: dcd8ff1d0b1d74aac9afe4af78ef8a4f
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     outline: []
@@ -152,12 +153,12 @@ TextureImporter:
     bones: []
     spriteID: 7a114dcd1e4544b65a53f1cdc28b4d93
     vertices: []
-    indices: 
+    indices:
     edges: []
     weights: []
-  spritePackingTag: 
+  spritePackingTag:
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:
