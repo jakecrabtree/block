@@ -48,14 +48,14 @@ public class AdManager : MonoBehaviour {
 		
 	}
 
-	public void CreateAd(Vector2 position){
+	public void CreateAd(Vector2 position, int order){
 		//Get random ad image from list generated in start()
 		int randomIndex = Random.Range(0,adSprites.Length);
 		Sprite randomAdImage = adSprites[randomIndex];
 
 		//Calculate size ratio and pick which defined one it corresponds to
-		float spriteWidth = randomAdImage.rect.width;
-		float spriteLength = randomAdImage.rect.height;
+		float spriteWidth = randomAdImage.rect.width/randomAdImage.pixelsPerUnit;
+		float spriteLength = randomAdImage.rect.height/randomAdImage.pixelsPerUnit;
 		float spriteRatio = spriteLength/spriteWidth;
 
 		float minRatio = 1000000f;
@@ -74,6 +74,7 @@ public class AdManager : MonoBehaviour {
 		//Get random game prefab
 		randomIndex = Random.Range(0,adGamePrefabs.Length);
 		GameObject newAdObject = Instantiate(adGamePrefabs[randomIndex],position,Quaternion.identity);
+		newAdObject.GetComponent<Renderer>().sortingOrder = 8*order;
 
 		BoxCollider2D collider = newAdObject.AddComponent<BoxCollider2D>();
 		collider.size = new Vector2(spriteWidth,spriteLength);

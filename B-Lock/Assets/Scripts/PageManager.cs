@@ -40,10 +40,10 @@ public class PageManager : MonoBehaviour {
 		camera = Camera.main;
 		float frustumHeight = 2f * camera.orthographicSize;
  		float frustumWidth = frustumHeight * camera.aspect;
-		cameraMinX = (camera.transform.position.x - 0.5f*frustumWidth)*.9f;
-		cameraMaxX = (camera.transform.position.x + 0.5f*frustumWidth)*.9f;
-		cameraMinY = (camera.transform.position.x - 0.5f*frustumHeight)*.9f;
-		cameraMaxY = (camera.transform.position.x + 0.5f*frustumHeight)*.9f; 
+		cameraMinX = (camera.transform.position.x - 0.5f*frustumWidth)*.8f;
+		cameraMaxX = (camera.transform.position.x + 0.5f*frustumWidth)*.8f;
+		cameraMinY = (camera.transform.position.x - 0.5f*frustumHeight)*.8f;
+		cameraMaxY = (camera.transform.position.x + 0.5f*frustumHeight)*.8f; 
 	}
 
 	// Use this for initialization
@@ -66,7 +66,7 @@ public class PageManager : MonoBehaviour {
 		}
 		for (int i = 0; i < adPerLevelAmount; i++){
 			adManager.CreateAd(new Vector2(Random.Range(cameraMinX, cameraMaxX),
-								Random.Range(cameraMinY, cameraMaxY)));
+								Random.Range(cameraMinY, cameraMaxY)), i);
 		}
 	}
 

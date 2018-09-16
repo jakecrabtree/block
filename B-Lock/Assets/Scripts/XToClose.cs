@@ -20,6 +20,7 @@ public class XToClose : Ad
     void InitializeGame(){
         xButton = Resources.Load<GameObject>(xButtonPath);
         xButton = Instantiate(xButton, transform);
+        xButton.GetComponent<Renderer>().sortingOrder = gameObject.GetComponent<Renderer>().sortingOrder + 1;
         xButton.GetComponent<XObject>().Initialize(this);
     }
 }
