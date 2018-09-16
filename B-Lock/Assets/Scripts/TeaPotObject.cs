@@ -39,11 +39,10 @@ public class TeaPotObject : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-
         if (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
-            textHolder.text = Math.Round(timeLeft, 2).ToString();          
+            textHolder.text = Math.Round(timeLeft, 0).ToString();          
         }
         else if(!calledPassOrFail)
         {
