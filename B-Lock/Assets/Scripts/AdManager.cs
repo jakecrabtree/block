@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class AdManager : MonoBehaviour {
 
+	public static AdManager manager = null;
 	PageManager pageManager;
 	string adImagesPath = "Sprites" + Path.DirectorySeparatorChar + "Ads";
 	string gameBackgroundPath = "Sprites" + Path.DirectorySeparatorChar + 
@@ -21,6 +22,12 @@ public class AdManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+		if (manager == null){
+			manager = this;
+		}
+		else if (manager != this){
+			Destroy(this.gameObject);
+		}
 		adSprites = Resources.LoadAll<Sprite>(adImagesPath);
 		int currentFolder = 0;
 		gameBackgrounds = new Sprite[gameBackgroundFolders.Length][];

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PageManager : MonoBehaviour {
 
+	private static PageManager manager = null;
 	BlockGameManager blockGameManager;
 	AdManager adManager;
 	string resourcesPath = "Prefabs" + Path.DirectorySeparatorChar + "Pages";
@@ -17,6 +18,12 @@ public class PageManager : MonoBehaviour {
 	}
 
 	void Awake(){
+		if (manager == null){
+			manager = this;
+		}
+		else if (manager != this){
+			Destroy(this.gameObject);
+		}
 		GameObject adManagerObject = new GameObject();
 		adManager = adManagerObject.AddComponent<AdManager>();
 		adManager.GetComponent<AdManager>().Initialize(this);

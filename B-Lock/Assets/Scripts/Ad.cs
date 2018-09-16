@@ -36,14 +36,10 @@ public class Ad : MonoBehaviour {
 	/// OnMouseDown is called when the user has pressed the mouse button while
 	/// over the GUIElement or Collider.
 	/// </summary>
-	void OnMouseDown()
+	protected void OnMouseDown()
 	{
 		renderer.sprite = gameBackground;
-	//	float xScaleFactor = (float)adImage.rect.width / (float)gameBackground.rect.width;
-	//	float yScaleFactor = (float)adImage.rect.height / (float)gameBackground.rect.height;
-	//	gameObject.transform.localScale = new Vector3(xScaleFactor,yScaleFactor,0.0f);
 		currState = AdState.Clicked;
-        OnClick();
     }
 
 	//This function is called when the player wins the corresponding minigame. 
@@ -56,6 +52,5 @@ public class Ad : MonoBehaviour {
 		adManager.AdCompleted(this, false);
 	}
 
-    void OnClick(){	}
 }
 

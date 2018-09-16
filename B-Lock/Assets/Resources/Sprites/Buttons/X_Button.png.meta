@@ -1,15 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: d8ecd0e992d3cf34baad43e3a91b1b87
 TextureImporter:
   fileIDToRecycleName:
     21300000: X_Button_0
     21300002: X_Button_1
-=======
-guid: c45f1847b52724f368ef2c3be4caf899
-TextureImporter:
-  fileIDToRecycleName: {}
->>>>>>> 9fcfb59e85b52e88e3401af7543cc5e03c376980
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -44,26 +38,18 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< HEAD
   spriteMode: 2
-=======
-  spriteMode: 1
->>>>>>> 9fcfb59e85b52e88e3401af7543cc5e03c376980
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-<<<<<<< HEAD
-  spriteGenerateFallbackPhysicsShape: 0
-=======
   spriteGenerateFallbackPhysicsShape: 1
->>>>>>> 9fcfb59e85b52e88e3401af7543cc5e03c376980
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -96,55 +82,6 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-<<<<<<< HEAD
-  spriteSheet:
-    serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: X_Button_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 121555092b09d8145b06ca65184c6175
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: X_Button_1
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 1
-        width: 200
-        height: 199
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 596e6c7f896734e46a952be357e3a3cb
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    outline: []
-    physicsShape: []
-    bones: []
-    spriteID: 3533ba307db7ec54e92fb0130f6055dd
-=======
   - serializedVersion: 2
     buildTarget: iPhone
     maxTextureSize: 2048
@@ -169,12 +106,51 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: X_Button_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0cd0493d45df45e49c22c53777561b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: X_Button_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e38528f5430534200b8b3b91fd863e6a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c7e138b89d9244748849697725779eda
->>>>>>> 9fcfb59e85b52e88e3401af7543cc5e03c376980
+    spriteID: ce62513215b1342039c8b7298135ef3f
     vertices: []
     indices: 
     edges: []

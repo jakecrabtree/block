@@ -11,6 +11,6 @@ public class DragToRemove : Ad
         X = Instantiate(new GameObject());
         X.AddComponent<XObject>();
         X.transform.parent = transform;
-        X.GetComponent<XObject>().Initiaize();
+      //  X.GetComponent<XObject>().Initialize();
     }
 }

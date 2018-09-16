@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BlockGameManager : MonoBehaviour {
 
+	private static BlockGameManager manager = null;
 	Timer timer;
 	PageManager pageManager;
 
@@ -19,9 +20,16 @@ public class BlockGameManager : MonoBehaviour {
 	/// </summary>
 	void Awake()
 	{	
+		if (manager == null){
+			manager = this;
+		}
+		else if (manager != this){
+			Destroy(this.gameObject);
+		}
 		GameObject pageManagerObject = new GameObject();
 		pageManager = pageManagerObject.AddComponent<PageManager>();
 		Instantiate(pageManagerObject);
+		pageManager.Initialize(this);
 		pageManager.LoadPage(adPerLevelAmount);
 	}
 
