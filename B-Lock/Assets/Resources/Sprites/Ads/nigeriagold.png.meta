@@ -1,9 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: acca31a8e6bdfb44b93f8a565817e3ff
 TextureImporter:
   fileIDToRecycleName:
     21300000: nigeriagold_0
     21300002: nigeriagold_1
+=======
+guid: 28a3c286ae1d245458f7b37cbca6814e
+TextureImporter:
+  fileIDToRecycleName: {}
+>>>>>>> 9fcfb59e85b52e88e3401af7543cc5e03c376980
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -42,7 +48,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+<<<<<<< HEAD
   spriteMode: 2
+=======
+  spriteMode: 1
+>>>>>>> 9fcfb59e85b52e88e3401af7543cc5e03c376980
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,6 +81,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+<<<<<<< HEAD
   - serializedVersion: 2
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -129,6 +140,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 33daafa26c116ad4fb3b1f63a26b088e
+=======
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0265339d3d9da4b37abd1d66925349ee
+>>>>>>> 9fcfb59e85b52e88e3401af7543cc5e03c376980
     vertices: []
     indices: 
     edges: []
