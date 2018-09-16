@@ -15,6 +15,8 @@ public class TeaPotObject : MonoBehaviour {
     double timeLeft = 2.5;
     float delayAfterClick = 2;
     Boolean clicked = false;
+    Boolean calledPassOrFail = false;
+    TextMesh textHolder;
 
     // Use this for initialization
     public void Initialize(Ad ad)
@@ -22,46 +24,40 @@ public class TeaPotObject : MonoBehaviour {
         this.ad = ad;
     }
     void Start()
-    {
+    {       
         sr = gameObject.GetComponent<SpriteRenderer>();
         TPSpriteNotBroke = Resources.Load<Sprite>("Sprites" + Path.DirectorySeparatorChar + "Buttons" +
                                         Path.DirectorySeparatorChar + "Do Not Click - NOT BROKEN");
         TPSPriteBroke = Resources.Load<Sprite>("Sprites" + Path.DirectorySeparatorChar + "Buttons" +
                                         Path.DirectorySeparatorChar + "Do Not Click - BROKEN");
         sr.sprite = TPSpriteNotBroke;
-        GetComponentInChildren<TextMesh>().text = "1.5";
+        textHolder = GetComponentInChildren<TextMesh>();
+        textHolder.GetComponent<Renderer>().sortingOrder = gameObject.GetComponent<Renderer>().sortingOrder + 1;
+        
     }
 
     // Update is called once per frame
     void Update () {
 
-        if(clicked)
-        {
-            delayAfterClick -= Time.deltaTime;
 
-            if (delayAfterClick <= 0)
-                endSelf();
-        }
-        else if (timeLeft > 0)
+        if (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
-            GetComponentInChildren<TextMesh>().text = Math.Round(timeLeft, 0).ToString();
+            textHolder.text = Math.Round(timeLeft, 2).ToString();          
         }
-        else
+        else if(!calledPassOrFail)
         {
-            GetComponentInChildren<TextMesh>().text = "0";
+            calledPassOrFail = true;
+            textHolder.text = "0";
             ad.OnSucceed();
+            Destroy(gameObject, 0);
         }
     }
 
     void OnMouseDown()
     {
-        clicked = true;
         sr.sprite = TPSPriteBroke;
-    }
-
-    void endSelf()
-    {
+        Destroy(gameObject, 1);
         ad.OnFailure();
     }
 }

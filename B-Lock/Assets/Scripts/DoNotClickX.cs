@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class DoNotClickX : Ad {
 
-    GameObject TeaPotObject;
-    string TeaPotPathButtonPath = "Prefabs" + Path.DirectorySeparatorChar + "GamePieces" + Path.DirectorySeparatorChar + "TeaPotObject";
+    GameObject TeaPot;
+    string TeaPotPathButtonPath = "Prefabs" + Path.DirectorySeparatorChar + "GamePieces" + Path.DirectorySeparatorChar + "Do Not Click - NOT BROKEN";
     bool hasBeenInitialized = false;
     protected void OnMouseDown()
     {
@@ -20,8 +20,9 @@ public class DoNotClickX : Ad {
 
     void InitializeGame()
     {
-        TeaPotObject = Resources.Load<GameObject>(TeaPotPathButtonPath);
-        TeaPotObject = Instantiate(TeaPotObject, transform);
-        TeaPotObject.GetComponent<TeaPotObject>().Initialize(this);
+        TeaPot = Resources.Load<GameObject>(TeaPotPathButtonPath);
+        TeaPot = Instantiate(TeaPot, new Vector3(transform.position.x,transform.position.y,0),Quaternion.identity);
+        TeaPot.GetComponent<Renderer>().sortingOrder = gameObject.GetComponent<Renderer>().sortingOrder + 1;
+        TeaPot.GetComponent<TeaPotObject>().Initialize(this);
     }
 }
