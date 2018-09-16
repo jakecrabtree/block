@@ -44,7 +44,7 @@ public class AdManager : MonoBehaviour {
 		//Calculate size ratio and pick which defined one it corresponds to
 		float spriteWidth = randomAdImage.rect.width;
 		float spriteLength = randomAdImage.rect.height;
-		float spriteRatio = spriteWidth/spriteLength;
+		float spriteRatio = spriteLength/spriteWidth;
 
 		float minRatio = 1000000f;
 		int whichRatio = 0; 
