@@ -27,7 +27,6 @@ public class AlphaClickAd : Ad {
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 
 	protected void OnMouseDown(){
@@ -36,6 +35,15 @@ public class AlphaClickAd : Ad {
             InitializeGame();
             hasBeenInitialized = true;
         }
+		UpdateSortingOrder();
+	}
+
+	public override void UpdateSortingOrder(){
+		foreach (GameObject curr in letterObjects){
+			if (curr != null){
+				curr.GetComponent<Renderer>().sortingOrder = gameObject.GetComponent<Renderer>().sortingOrder+1;
+			}
+		}
 	}
 
 	private void InitializeGame(){
@@ -53,6 +61,7 @@ public class AlphaClickAd : Ad {
 
 				Vector3 letterPos = GetLetterOffset(currIndex, i,j,spriteWidth,spriteHeight) + basePosition;//new Vector3(letterX, letterY, 0.0f);
 				letterObjects[currIndex] = Instantiate(letterPrefab, letterPos, Quaternion.identity);
+				letterObjects[currIndex].GetComponent<Renderer>().sortingLayerName = "GameElement";
 
 				letterObjects[currIndex].GetComponent<Letter>().Initialize(letters[currIndex], this);
 
