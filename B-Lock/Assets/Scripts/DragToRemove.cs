@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class XToClose : Ad
+public class DragToRemove : Ad
 {
     GameObject X;
     public void OnClick()
