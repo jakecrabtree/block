@@ -58,8 +58,10 @@ public class Ad : MonoBehaviour {
 		if (topMostGame != null){
 			topMostGame.GetComponent<Renderer>().sortingOrder = 0;
 			topMostGame.UpdateSortingOrder();
+			topMostGame.GetComponent<BoxCollider2D>().enabled = true;
 		}
 		topMostGame = this;
+		gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 
 	//This function is called when the player wins the corresponding minigame. 
