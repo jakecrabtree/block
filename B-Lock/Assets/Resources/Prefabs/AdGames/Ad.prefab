@@ -20,14 +20,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4640339221714364}
   - component: {fileID: 212051855564301590}
-  - component: {fileID: 114295285531149818}
+  - component: {fileID: 114073445822615618}
   m_Layer: 0
   m_Name: Ad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4640339221714364
 Transform:
   m_ObjectHideFlags: 1
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114295285531149818
+--- !u!114 &114073445822615618
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1621973337238356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4622df33428d64671bc4ae33e771e1bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 43924e429e8cef74d89007c13b8711f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212051855564301590
@@ -95,6 +95,6 @@ SpriteRenderer:
   m_Size: {x: 7.45, y: 5.68}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

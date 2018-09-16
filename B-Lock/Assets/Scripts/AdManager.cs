@@ -13,7 +13,7 @@ public class AdManager : MonoBehaviour {
 	string adGamePrefabsPath = "Prefabs" + Path.DirectorySeparatorChar + 
 									"AdGames" + Path.DirectorySeparatorChar;
 	string[] gameBackgroundFolders = {"1x1", "1x5", "3x2"};
-	float[] adRatios = {1f, 0.2f, 1.5f};
+	float[] adRatios = {1f, 0.2f, 1.333f};
 	Sprite[] adSprites;
 	Sprite[][] gameBackgrounds;
 	GameObject[] adGamePrefabs;
@@ -42,9 +42,9 @@ public class AdManager : MonoBehaviour {
 		Sprite randomAdImage = adSprites[randomIndex];
 
 		//Calculate size ratio and pick which defined one it corresponds to
-		float spriteWidth = randomAdImage.border.z - randomAdImage.border.x;
-		float spriteLength = randomAdImage.border.w - randomAdImage.border.y;
-		float spriteRatio = spriteWidth/spriteLength;
+		float spriteWidth = randomAdImage.rect.width;
+		float spriteLength = randomAdImage.rect.height;
+		float spriteRatio = spriteLength/spriteWidth;
 
 		float minRatio = 1000000f;
 		int whichRatio = 0; 
@@ -58,12 +58,16 @@ public class AdManager : MonoBehaviour {
 		//Get random game background image
 		randomIndex = Random.Range(0,gameBackgrounds[whichRatio].Length);
 		Sprite backgroundSprite = gameBackgrounds[whichRatio][randomIndex];
+	//	Rect backgroundRect = new Rect(backgroundSprite.rect.x, backgroundSprite.rect.y, spriteWidth, spriteLength);
+	//	backgroundSprite = Sprite.Create(backgroundSprite.texture, backgroundRect, backgroundSprite.pivot);
+
 
 		//Get random game prefab
 		randomIndex = Random.Range(0,adGamePrefabs.Length);
 		GameObject newAdObject = Instantiate(adGamePrefabs[randomIndex],position,Quaternion.identity);
 
-		newAdObject.AddComponent<BoxCollider2D>();
+		BoxCollider2D collider = newAdObject.AddComponent<BoxCollider2D>();
+		collider.size = new Vector2(spriteWidth,spriteLength);
 
 		//Initialize Ad
 		newAdObject.GetComponent<Ad>().Initialize(randomAdImage,backgroundSprite);
