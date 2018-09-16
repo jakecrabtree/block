@@ -16,9 +16,6 @@ public class Ad : MonoBehaviour {
 		this.gameBackground = gameBackground;
 		renderer = GetComponent<SpriteRenderer>();
 		renderer.sprite = adImage;
-		float xScaleFactor = (float)adImage.rect.width / (float)gameBackground.rect.width;
-		float yScaleFactor = (float)adImage.rect.height / (float)gameBackground.rect.height;
-		gameObject.transform.localScale += new Vector3(xScaleFactor,yScaleFactor,0.0f);
 		currState = AdState.Unclicked;
 	}
 
@@ -39,6 +36,9 @@ public class Ad : MonoBehaviour {
 	void OnMouseDown()
 	{
 		renderer.sprite = gameBackground;
+		float xScaleFactor = (float)adImage.rect.width / (float)gameBackground.rect.width;
+		float yScaleFactor = (float)adImage.rect.height / (float)gameBackground.rect.height;
+		gameObject.transform.localScale = new Vector3(xScaleFactor,yScaleFactor,0.0f);
 		currState = AdState.Clicked;
         OnClick();
     }
