@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour {
     Boolean reachedZero = false;
     int timeRemainingInt;
 
-    SpriteRenderer sr;
+    GameObject firstDigit;
     GameObject secondDigit;
 
     Sprite s0;
@@ -26,8 +26,9 @@ public class Timer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		//timeRemainingText = GetComponent<Text>();
-        sr = GetComponent<SpriteRenderer>();        
+        //timeRemainingText = GetComponent<Text>();
+        firstDigit = Instantiate(new GameObject(), transform);
+        firstDigit.AddComponent<SpriteRenderer>();
         secondDigit = Instantiate(new GameObject(), transform);
         secondDigit.AddComponent<SpriteRenderer>();
         secondDigit.transform.Translate(260, 0, 0);
@@ -52,32 +53,31 @@ public class Timer : MonoBehaviour {
             timeRemainingInt = (int)timeLeft;
             if(timeRemainingInt / 10 == 6)
             {
-                sr.sprite = s6;
+                firstDigit.GetComponent<SpriteRenderer>().sprite = s6;
             }
             else if(timeRemainingInt/10 == 5)
             {
-                sr.sprite = s5;
-                Debug.Log("hi");
+                firstDigit.GetComponent<SpriteRenderer>().sprite = s5;
             }
             else if (timeRemainingInt / 10 == 4)
             {
-                sr.sprite = s4;
+                firstDigit.GetComponent<SpriteRenderer>().sprite = s4;
             }
             else if (timeRemainingInt / 10 == 3)
             {
-                sr.sprite = s3;
+                firstDigit.GetComponent<SpriteRenderer>().sprite = s3;
             }
             else if (timeRemainingInt / 10 == 2)
             {
-                sr.sprite = s2;
+                firstDigit.GetComponent<SpriteRenderer>().sprite = s2;
             }
             else if (timeRemainingInt / 10 == 1)
             {
-                sr.sprite = s1;
+                firstDigit.GetComponent<SpriteRenderer>().sprite = s1;
             }
             else if (timeRemainingInt / 10 == 0)
             {
-                sr.sprite = s0;
+                firstDigit.GetComponent<SpriteRenderer>().sprite = s0;
             }
 
             if(timeRemainingInt % 10 == 9)
