@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class AdManager : MonoBehaviour {
 
+	PageManager pageManager;
 	string adImagesPath = "Sprites" + Path.DirectorySeparatorChar + "Ads";
 	string gameBackgroundPath = "Sprites" + Path.DirectorySeparatorChar + 
 									"GameBackgrounds" + Path.DirectorySeparatorChar;
@@ -29,6 +30,10 @@ public class AdManager : MonoBehaviour {
 			currentFolder++;
 		}
 		adGamePrefabs = Resources.LoadAll<GameObject>(adGamePrefabsPath);
+	}
+
+	public void Initialize(PageManager pageManager){
+		this.pageManager = pageManager;
 	}
 	
 	// Update is called once per frame
@@ -61,7 +66,6 @@ public class AdManager : MonoBehaviour {
 	//	Rect backgroundRect = new Rect(backgroundSprite.rect.x, backgroundSprite.rect.y, spriteWidth, spriteLength);
 	//	backgroundSprite = Sprite.Create(backgroundSprite.texture, backgroundRect, backgroundSprite.pivot);
 
-
 		//Get random game prefab
 		randomIndex = Random.Range(0,adGamePrefabs.Length);
 		GameObject newAdObject = Instantiate(adGamePrefabs[randomIndex],position,Quaternion.identity);
@@ -70,7 +74,12 @@ public class AdManager : MonoBehaviour {
 		collider.size = new Vector2(spriteWidth,spriteLength);
 
 		//Initialize Ad
-		newAdObject.GetComponent<Ad>().Initialize(randomAdImage,backgroundSprite);
+		newAdObject.GetComponent<Ad>().Initialize(randomAdImage,backgroundSprite,this);
+	}
+
+	public void AdCompleted(Ad ad, bool succeeded){
+		pageManager.AdCompleted(succeeded);
+		Destroy(ad.gameObject);
 	}
 
 }

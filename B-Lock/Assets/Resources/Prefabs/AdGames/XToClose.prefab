@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212051855564301590}
   - component: {fileID: 114073445822615618}
   m_Layer: 0
-  m_Name: Ad
+  m_Name: XToClose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,14 +6,22 @@ using UnityEngine;
 
 public class PageManager : MonoBehaviour {
 
+	BlockGameManager blockGameManager;
 	AdManager adManager;
-	string resourcesPath = "Sprites" + Path.DirectorySeparatorChar + "Pages";
-	Sprite[] pageBackgrounds;
+	string resourcesPath = "Prefabs" + Path.DirectorySeparatorChar + "Pages";
+	GameObject[] pageBackgrounds;
+	GameObject currentPage;
+
+	public void Initialize(BlockGameManager blockGameManager){
+		this.blockGameManager  = blockGameManager;
+	}
+
 	void Awake(){
 		GameObject adManagerObject = new GameObject();
 		adManager = adManagerObject.AddComponent<AdManager>();
+		adManager.GetComponent<AdManager>().Initialize(this);
 		Instantiate(adManagerObject);
-		pageBackgrounds = Resources.LoadAll<Sprite>(resourcesPath);
+		pageBackgrounds = Resources.LoadAll<GameObject>(resourcesPath);
 	}
 
 	// Use this for initialization
@@ -26,7 +34,14 @@ public class PageManager : MonoBehaviour {
 		
 	}
 
-	public void LoadPage(){
-		adManager.CreateAd(new Vector2());
+	public void LoadPage(int adPerLevelAmount){
+		currentPage = Instantiate(pageBackgrounds[Random.Range(0,pageBackgrounds.Length)]);
+		for (int i = 0; i < adPerLevelAmount; i++){
+			adManager.CreateAd(new Vector2());
+		}
+	}
+
+	public void AdCompleted(bool succeeded){
+		blockGameManager.AdCompleted(succeeded);
 	}
 }

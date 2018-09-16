@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: GameElement
+    uniqueID: 4101872245
+    locked: 0
+  - name: Ad
+    uniqueID: 1087294755
+    locked: 0
+  - name: Background
+    uniqueID: 1229065193
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
