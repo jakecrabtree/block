@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BlockGameManager : MonoBehaviour {
 
@@ -39,6 +41,10 @@ public class BlockGameManager : MonoBehaviour {
 		timer = timerUIObject.GetComponentInChildren<Timer>();
 		timer.Initialize(this);
 	}
+    public void Mute()
+    {
+        AudioListener.pause = !AudioListener.pause;
+    }
 
 	// Use this for initialization
 	void Start () {
