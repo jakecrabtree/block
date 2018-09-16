@@ -9,7 +9,6 @@ public class XObject : MonoBehaviour {
     
     SpriteRenderer sr;
     Sprite s;
-    Boolean clicked = false;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +17,7 @@ public class XObject : MonoBehaviour {
 
     public void Initiaize()
     {
+        Debug.Log("Hi2");
         transform.Translate(50, 50, 0);
         s = Resources.Load<Sprite>("X_Button_0");
         sr = GetComponent<SpriteRenderer>();
@@ -36,13 +36,8 @@ public class XObject : MonoBehaviour {
         sr.sprite = s;
     }
 
-    public Boolean getClicked()
-    {
-        return clicked;
-    }
-
     void OnMouseDown()
     {
-        clicked = true;
+        transform.parent.GetComponent<XToClose>().OnSucceed();
     }
 }
