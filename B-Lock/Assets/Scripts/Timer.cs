@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,16 +9,11 @@ public class Timer : MonoBehaviour {
 
     float timeLeft = 60;
     Boolean reachedZero = false;
-    int timeRemainingInt;
-
-    GameObject firstDigit;
-    GameObject secondDigit;
+    Text timeRemainingText;
 
     // Use this for initialization
     void Start () {
-        //timeRemainingText = GetComponent<Text>();
-        firstDigit = GameObject.Find("6");
-        secondDigit = GameObject.Find("0");
+        timeRemainingText = GetComponent<Text>();
     }
 	
 	// Update is called once per frame
@@ -25,14 +21,12 @@ public class Timer : MonoBehaviour {
         if(timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
-            timeRemainingInt = (int)timeLeft;
-            firstDigit = Instantiate(Resources.Load<GameObject>("Assets / Resources / Prefabs / Numbers / 0.prefab"),firstDigit.transform);
-            secondDigit = Instantiate(Resources.Load<GameObject>((timeRemainingInt % 10).ToString()), secondDigit.transform);           
+            timeRemainingText.text = Math.Round(timeLeft,0).ToString();         
+
         }
         else if(!reachedZero)
         {
-            firstDigit = Instantiate(GameObject.Find("0"), secondDigit.transform);
-            secondDigit = Instantiate(GameObject.Find("0"), secondDigit.transform);
+            timeRemainingText.text = "0";
             timesUp();
             reachedZero = true;
         }
