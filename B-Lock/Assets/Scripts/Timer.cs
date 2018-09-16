@@ -40,7 +40,7 @@ public class Timer : MonoBehaviour {
         
 	}
 
-	void DecreaseTime(int amount){
+	public void DecreaseTime(int amount){
         timeLeft -= amount;
 	}
 
