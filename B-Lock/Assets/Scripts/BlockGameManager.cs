@@ -10,7 +10,7 @@ public class BlockGameManager : MonoBehaviour {
 
 	int timePenalty = 3;
 	int adPerLevelAmount = 1;
-	int adCount = 0;
+	int adCount;
 	int numLevels = 3;
 	int level = 0;
 
@@ -31,6 +31,7 @@ public class BlockGameManager : MonoBehaviour {
 		Instantiate(pageManagerObject);
 		pageManager.Initialize(this);
 		pageManager.LoadPage(adPerLevelAmount);
+		adCount = adPerLevelAmount;
 	}
 
 	// Use this for initialization

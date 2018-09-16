@@ -18,7 +18,6 @@ public class XToClose : Ad
     }
 
     void InitializeGame(){
-        Debug.Log("Called");
         xButton = Resources.Load<GameObject>(xButtonPath);
         xButton = Instantiate(xButton, transform);
         xButton.GetComponent<XObject>().Initialize(this);

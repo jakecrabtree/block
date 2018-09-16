@@ -8,8 +8,7 @@ public class XObject : MonoBehaviour {
 
     
     SpriteRenderer sr;
-    Sprite x0;
-    Sprite x1;
+    Sprite[] xSprite;
 
     Ad ad;
 
@@ -19,21 +18,18 @@ public class XObject : MonoBehaviour {
     }
 	void Start () {
         sr = gameObject.GetComponent<SpriteRenderer>();
-        x0 = sr.sprite;
+        xSprite = Resources.LoadAll<Sprite>("Sprites" + Path.DirectorySeparatorChar + "Buttons" + 
+                                        Path.DirectorySeparatorChar + "X_Button");
 	}
 
     void OnMouseEnter()
     {
-        if (x1 == null){
-            x1 = Resources.Load<Sprite>("Sprites" + Path.DirectorySeparatorChar + "Buttons" + 
-                                        Path.DirectorySeparatorChar + "X_Button");
-        }
-        sr.sprite = x1;
+        sr.sprite = xSprite[1];
     }
 
     void OnMouseExit()
     {
-        sr.sprite = x0;
+        sr.sprite = xSprite[0];
     }
 
     void OnMouseDown()

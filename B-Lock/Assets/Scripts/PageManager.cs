@@ -12,6 +12,14 @@ public class PageManager : MonoBehaviour {
 	string resourcesPath = "Prefabs" + Path.DirectorySeparatorChar + "Pages";
 	GameObject[] pageBackgrounds;
 	GameObject currentPage;
+	float currentPageYTransform;
+
+	Camera camera;
+	
+	float cameraMinX;
+	float cameraMinY;
+	float cameraMaxX;
+	float cameraMaxY;
 
 	public void Initialize(BlockGameManager blockGameManager){
 		this.blockGameManager  = blockGameManager;
@@ -29,6 +37,13 @@ public class PageManager : MonoBehaviour {
 		adManager.GetComponent<AdManager>().Initialize(this);
 		Instantiate(adManagerObject);
 		pageBackgrounds = Resources.LoadAll<GameObject>(resourcesPath);
+		camera = Camera.main;
+		float frustumHeight = 2f * camera.orthographicSize;
+ 		float frustumWidth = frustumHeight * camera.aspect;
+		cameraMinX = (camera.transform.position.x - 0.5f*frustumWidth)*.9f;
+		cameraMaxX = (camera.transform.position.x + 0.5f*frustumWidth)*.9f;
+		cameraMinY = (camera.transform.position.x - 0.5f*frustumHeight)*.9f;
+		cameraMaxY = (camera.transform.position.x + 0.5f*frustumHeight)*.9f; 
 	}
 
 	// Use this for initialization
@@ -42,9 +57,16 @@ public class PageManager : MonoBehaviour {
 	}
 
 	public void LoadPage(int adPerLevelAmount){
-		currentPage = Instantiate(pageBackgrounds[Random.Range(0,pageBackgrounds.Length)]);
+		if (currentPage == null){
+			currentPage = Instantiate(pageBackgrounds[Random.Range(0,pageBackgrounds.Length)]);
+			currentPageYTransform = -1f* currentPage.transform.position.y;
+		}
+		else{
+			currentPage.transform.Translate(0.0f, currentPageYTransform, 0.0f);
+		}
 		for (int i = 0; i < adPerLevelAmount; i++){
-			adManager.CreateAd(new Vector2());
+			adManager.CreateAd(new Vector2(Random.Range(cameraMinX, cameraMaxX),
+								Random.Range(cameraMinY, cameraMaxY)));
 		}
 	}
 
