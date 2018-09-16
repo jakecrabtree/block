@@ -14,14 +14,14 @@ public class Ad : MonoBehaviour {
 	public void Initialize(Sprite adImage, Sprite gameBackground){
 		this.adImage = adImage;
 		this.gameBackground = gameBackground;
+		renderer = GetComponent<SpriteRenderer>();
+		renderer.sprite = adImage;
+		currState = AdState.Unclicked;
 	}
 
 
 	// Use this for initialization
 	void Start () {
-		currState = AdState.Unclicked;
-		renderer = GetComponent<SpriteRenderer>();
-		renderer.sprite = adImage;
 	}
 	
 	// Update is called once per frame
@@ -55,3 +55,4 @@ public class Ad : MonoBehaviour {
 
     }
 }
+
