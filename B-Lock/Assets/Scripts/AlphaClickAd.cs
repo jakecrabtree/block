@@ -91,6 +91,7 @@ public class AlphaClickAd : Ad {
 	public void LetterClicked(char c){
 		if (c == lettersSorted[currLetter]){
 			if (++currLetter == lettersSorted.Count){
+				Destroy(titleObject);
 				OnSucceed();
 			}
 		}
@@ -106,7 +107,7 @@ public class AlphaClickAd : Ad {
 	private Vector3 GetLetterOffset(int index, int i, int j, float spriteWidth, float spriteHeight){
 		switch(shape){
 			case AdShape.Banner:
-				return new Vector3(spriteWidth*index-adImageWidth/4f, adImageLength/4f, 0.0f);
+				return new Vector3(spriteWidth*index-((2.5f*adImageWidth)/8f), adImageLength/4f, 0.0f);
 			case AdShape.Rectangle:
 				return new Vector3(spriteWidth*i-((3f*adImageWidth)/8f), spriteHeight*j, 0.0f);
 			case AdShape.Square:
@@ -117,9 +118,9 @@ public class AlphaClickAd : Ad {
 
 	private Vector3 GetTitleOffset(float titleHeight){
 		switch(shape){
-			case AdShape.Rectangle:
-				//return new Vector3(0.0f, 1.5f*titleHeight, 0.0f);
 			case AdShape.Banner:
+				return new Vector3(0.0f, 1.5f*titleHeight, 0.0f);
+			case AdShape.Rectangle:
 			case AdShape.Square:
 				return new Vector3(0.0f, 2*titleHeight, 0.0f);
 		}
