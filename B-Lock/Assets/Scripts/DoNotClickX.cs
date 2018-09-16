@@ -25,4 +25,8 @@ public class DoNotClickX : Ad {
         TeaPot.GetComponent<Renderer>().sortingOrder = gameObject.GetComponent<Renderer>().sortingOrder + 1;
         TeaPot.GetComponent<TeaPotObject>().Initialize(this);
     }
+
+    public override void UpdateSortingOrder(){
+        
+    }
 }
