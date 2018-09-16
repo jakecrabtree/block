@@ -10,12 +10,15 @@ public class PageManager : MonoBehaviour {
 	string resourcesPath = "Sprites" + Path.DirectorySeparatorChar + "Pages";
 	Sprite[] pageBackgrounds;
 	void Awake(){
-		Instantiate(adManager);
+		GameObject adManagerObject = new GameObject();
+		adManager = adManagerObject.AddComponent<AdManager>();
+		Instantiate(adManagerObject);
+		pageBackgrounds = Resources.LoadAll<Sprite>(resourcesPath);
 	}
 
 	// Use this for initialization
 	void Start () {
-		pageBackgrounds = Resources.LoadAll<Sprite>(resourcesPath);
+		
 	}
 	
 	// Update is called once per frame

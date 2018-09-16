@@ -19,7 +19,7 @@ public class AdManager : MonoBehaviour {
 	GameObject[] adGamePrefabs;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		adSprites = Resources.LoadAll<Sprite>(adImagesPath);
 		int currentFolder = 0;
 		gameBackgrounds = new Sprite[gameBackgroundFolders.Length][];
@@ -62,6 +62,8 @@ public class AdManager : MonoBehaviour {
 		//Get random game prefab
 		randomIndex = Random.Range(0,adGamePrefabs.Length);
 		GameObject newAdObject = Instantiate(adGamePrefabs[randomIndex],position,Quaternion.identity);
+
+		newAdObject.AddComponent<Collider2D>();
 
 		//Initialize Ad
 		newAdObject.GetComponent<Ad>().Initialize(randomAdImage,backgroundSprite);

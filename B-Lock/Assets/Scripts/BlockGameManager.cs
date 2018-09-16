@@ -11,12 +11,16 @@ public class BlockGameManager : MonoBehaviour {
 	/// Awake is called when the script instance is being loaded.
 	/// </summary>
 	void Awake()
-	{
+	{	
+		GameObject pageManagerObject = new GameObject();
+		pageManager = pageManagerObject.AddComponent<PageManager>();
+		Instantiate(pageManagerObject);
+		pageManager.LoadPage();
 	}
 
 	// Use this for initialization
 	void Start () {
-		pageManager.LoadPage();
+	
 	}
 	
 	// Update is called once per frame
