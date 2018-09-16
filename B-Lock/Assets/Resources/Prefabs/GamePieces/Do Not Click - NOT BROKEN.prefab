@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 212964715534462488}
   - component: {fileID: 222487142794389788}
   - component: {fileID: 114242978430889892}
+  - component: {fileID: 61086860174329410}
   m_Layer: 0
   m_Name: Do Not Click - NOT BROKEN
   m_TagString: Untagged
@@ -82,6 +83,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!61 &61086860174329410
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1458707243623454}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10, y: 10}
+    newSize: {x: 10, y: 10}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10}
+  m_EdgeRadius: 0
 --- !u!102 &102935562408938446
 TextMesh:
   serializedVersion: 3
@@ -182,7 +208,7 @@ RectTransform:
   m_GameObject: {fileID: 1458707243623454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 16.5015, y: 16.5015, z: 16.5015}
+  m_LocalScale: {x: 0.43, y: 0.43, z: 0.43}
   m_Children:
   - {fileID: 224769695254711714}
   m_Father: {fileID: 0}
