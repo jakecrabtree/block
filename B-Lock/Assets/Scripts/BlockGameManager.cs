@@ -39,7 +39,10 @@ public class BlockGameManager : MonoBehaviour {
 		pageManager.Initialize(this);
 		pageManager.LoadPage(adPerLevelAmount);
 		adCount = adPerLevelAmount;
+
 		timerUIObject = Instantiate(Resources.Load<GameObject>(timerPath));
+        Color oldColor = timerUIObject.GetComponentInChildren<Image>().color;
+        timerUIObject.GetComponentInChildren<Image>().color = new Color(oldColor.r, oldColor.g, oldColor.b, 0.0f);
 		timer = timerUIObject.GetComponentInChildren<Timer>();
 		timer.Initialize(this);
         audioManager = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioManager>();
