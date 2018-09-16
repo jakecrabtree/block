@@ -6,20 +6,29 @@ public class Ad : MonoBehaviour {
 
 	AdManager adManager;
 	enum AdState{Unclicked, Clicked, Succeeded, Failed};
+	public enum AdShape{Square,Banner,Rectangle};
 	AdState currState;
+	public AdShape shape;
 	SpriteRenderer renderer;
 	Sprite adImage;
 	Sprite gameBackground;
+	
+	protected float adImageWidth;
+	protected float adImageLength;
 
 	//Initialize the ad with its given ad image
-	public void Initialize(Sprite adImage, Sprite gameBackground, AdManager adManager){
+	public void Initialize(Sprite adImage, Sprite gameBackground, AdManager adManager, AdShape shape,float adImageWidth, float adImageLength){
 		this.adImage = adImage;
 		this.gameBackground = gameBackground;
 		this.adManager = adManager;
+		this.shape = shape;
+		this.adImageLength = adImageLength;
+		this.adImageWidth = adImageWidth;
 
 		renderer = GetComponent<SpriteRenderer>();
 		renderer.sprite = adImage;
 		currState = AdState.Unclicked;
+		
 	}
 
 

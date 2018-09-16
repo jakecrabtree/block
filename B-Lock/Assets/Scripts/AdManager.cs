@@ -14,8 +14,8 @@ public class AdManager : MonoBehaviour {
 									"GameBackgrounds" + Path.DirectorySeparatorChar;
 	string adGamePrefabsPath = "Prefabs" + Path.DirectorySeparatorChar + 
 									"AdGames" + Path.DirectorySeparatorChar;
-	string[] gameBackgroundFolders = {/*"Squares", "Banners",*/ "Rectangles"};
-	float[] adRatios = {/*1f, 0.2f,*/ 1.333f};
+	string[] gameBackgroundFolders = {"Squares", "Banners", "Rectangles"};
+	float[] adRatios = {1f, 0.2f, 1.333f};
 	Sprite[] adSprites;
 	Sprite[][] gameBackgrounds;
 	GameObject[] adGamePrefabs;
@@ -67,6 +67,7 @@ public class AdManager : MonoBehaviour {
 			}
 		}
 		
+		
 		//Get random game background image
 		randomIndex = Random.Range(0,gameBackgrounds[whichRatio].Length);
 		Sprite backgroundSprite = gameBackgrounds[whichRatio][randomIndex];
@@ -80,7 +81,7 @@ public class AdManager : MonoBehaviour {
 		collider.size = new Vector2(spriteWidth,spriteLength);
 
 		//Initialize Ad
-		newAdObject.GetComponent<Ad>().Initialize(randomAdImage,backgroundSprite,this);
+		newAdObject.GetComponent<Ad>().Initialize(randomAdImage,backgroundSprite,this, (Ad.AdShape)whichRatio,spriteWidth,spriteLength);
 	}
 
 	public void AdCompleted(Ad ad, bool succeeded){
