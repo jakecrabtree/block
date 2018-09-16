@@ -51,6 +51,10 @@ public class Ad : MonoBehaviour {
 	/// </summary>
 	protected void OnMouseDown()
 	{
+		Animator animator = gameObject.GetComponent<Animator>();
+		if (animator != null){
+			gameObject.GetComponent<Animator>().runtimeAnimatorController = null;
+		}
 		renderer.sprite = gameBackground;
 		currState = AdState.Clicked;
 		gameObject.GetComponent<Renderer>().sortingLayerName = "GameElement";
