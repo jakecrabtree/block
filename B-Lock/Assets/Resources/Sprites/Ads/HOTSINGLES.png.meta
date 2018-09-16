@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 3d33cc30a53b377459c9be5097bd1030
 TextureImporter:
   fileIDToRecycleName:
@@ -7,11 +6,6 @@ TextureImporter:
     21300002: HOTSINGLES_1
     21300004: HOTSINGLES_2
     21300006: HOTSINGLES_3
-=======
-guid: 37ae3f57de2b74e1da787ffad3cad1c0
-TextureImporter:
-  fileIDToRecycleName: {}
->>>>>>> 9fcfb59e85b52e88e3401af7543cc5e03c376980
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -46,15 +40,11 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< HEAD
   spriteMode: 2
-=======
-  spriteMode: 1
->>>>>>> 9fcfb59e85b52e88e3401af7543cc5e03c376980
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -83,7 +73,6 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-<<<<<<< HEAD
   - serializedVersion: 2
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -103,17 +92,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 3
-        width: 1006
-        height: 997
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 0
+        width: 1003
+        height: 1000
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03aefcdf9625e24469812eb7af1a93b7
+      spriteID: 8e423f0fcf74d2348b3ed7305d63f0f5
       vertices: []
       indices: 
       edges: []
@@ -122,18 +111,18 @@ TextureImporter:
       name: HOTSINGLES_1
       rect:
         serializedVersion: 2
-        x: 1008
+        x: 1007
         y: 0
-        width: 997
+        width: 996
         height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a567c31e0df721548958cda58079e4ac
+      spriteID: b9630428192a27c4e9e5631e7c7eddd1
       vertices: []
       indices: 
       edges: []
@@ -142,18 +131,18 @@ TextureImporter:
       name: HOTSINGLES_2
       rect:
         serializedVersion: 2
-        x: 2005
+        x: 2007
         y: 0
-        width: 1002
+        width: 996
         height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e80382541eef4b84291fdd440513bcd6
+      spriteID: 68c3f7ed6adc4a146a57b5294c081eed
       vertices: []
       indices: 
       edges: []
@@ -162,18 +151,18 @@ TextureImporter:
       name: HOTSINGLES_3
       rect:
         serializedVersion: 2
-        x: 3004
+        x: 3007
         y: 0
-        width: 996
+        width: 993
         height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 992f600dcc15c2c469efd1a692345123
+      spriteID: 2cb6f2af43257bd42b7aa5a46015ad00
       vertices: []
       indices: 
       edges: []
@@ -181,16 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 91500e83414c6c344b26e2203e479c39
-=======
-  spriteSheet:
-    serializedVersion: 2
-    sprites: []
-    outline: []
-    physicsShape: []
-    bones: []
-    spriteID: eaae89c96bcd947ea92ed39eb765c028
->>>>>>> 9fcfb59e85b52e88e3401af7543cc5e03c376980
+    spriteID: 9913d08b3c261ec449ceb28f2e3722bb
     vertices: []
     indices: 
     edges: []
