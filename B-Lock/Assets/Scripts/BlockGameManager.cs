@@ -40,7 +40,9 @@ public class BlockGameManager : MonoBehaviour {
 		timerUIObject = Instantiate(Resources.Load<GameObject>(timerPath));
 		timer = timerUIObject.GetComponentInChildren<Timer>();
 		timer.Initialize(this);
-	}
+        GameObject.FindGameObjectsWithTag("Music");
+        
+            }
     public void Mute()
     {
         AudioListener.pause = !AudioListener.pause;
@@ -76,8 +78,12 @@ public class BlockGameManager : MonoBehaviour {
 	public void GameOver(bool win){
 		if (win){
 			Debug.Log("Win!");
+            SceneManager.LoadScene(3);
+            //Change Music
 		}else{
 			Debug.Log("Lose!");
-		}
+            SceneManager.LoadScene(4);
+            //Change Music
+        }
 	}
 }
