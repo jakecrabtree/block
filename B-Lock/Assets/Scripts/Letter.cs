@@ -20,4 +20,22 @@ public class Letter : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	/// <summary>
+	/// OnMouseDown is called when the user has pressed the mouse button while
+	/// over the GUIElement or Collider.
+	/// </summary>
+	void OnMouseDown()
+	
+	{
+		alphaClickAd.LetterClicked(letter);
+		Destroy(gameObject);
+	}
+
+	/// <summary>
+	/// This function is called when the MonoBehaviour will be destroyed.
+	/// </summary>
+	void OnDestroy()
+	{
+	}
 }
