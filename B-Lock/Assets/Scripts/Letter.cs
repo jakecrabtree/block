@@ -13,12 +13,12 @@ public class Letter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
 	/// <summary>
@@ -26,7 +26,7 @@ public class Letter : MonoBehaviour {
 	/// over the GUIElement or Collider.
 	/// </summary>
 	void OnMouseDown()
-	
+
 	{
 		alphaClickAd.LetterClicked(letter);
 		Destroy(gameObject);
