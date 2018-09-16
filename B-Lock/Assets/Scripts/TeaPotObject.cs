@@ -32,8 +32,7 @@ public class TeaPotObject : MonoBehaviour {
                                         Path.DirectorySeparatorChar + "Do Not Click - BROKEN");
         sr.sprite = TPSpriteNotBroke;
         textHolder = GetComponentInChildren<TextMesh>();
-        textHolder.GetComponent<Renderer>().sortingOrder = gameObject.GetComponent<Renderer>().sortingOrder + 1;
-        
+        textHolder.GetComponent<Renderer>().sortingOrder = gameObject.GetComponent<Renderer>().sortingOrder + 1;        
     }
 
     // Update is called once per frame
