@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 24f06eded549e314aa8d63a94fe04c1c
 TextureImporter:
   fileIDToRecycleName:
     21300000: Cursor_0
     21300002: Cursor_1
     21300004: Cursor_2
-=======
-guid: 22bb4ad70ed444702a8e0b19129c2901
-TextureImporter:
-  fileIDToRecycleName: {}
->>>>>>> 9fcfb59e85b52e88e3401af7543cc5e03c376980
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -49,11 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< HEAD
   spriteMode: 2
-=======
-  spriteMode: 1
->>>>>>> 9fcfb59e85b52e88e3401af7543cc5e03c376980
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -82,7 +72,6 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-<<<<<<< HEAD
   - serializedVersion: 2
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -101,10 +90,10 @@ TextureImporter:
       name: Cursor_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 2
-        width: 55
-        height: 73
+        x: 0
+        y: 0
+        width: 75
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,7 +101,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3239f4d61f176224cbde97d906afdf70
+      spriteID: 87e0b1c1614fea2458e307cdcde6b930
       vertices: []
       indices: 
       edges: []
@@ -121,10 +110,10 @@ TextureImporter:
       name: Cursor_1
       rect:
         serializedVersion: 2
-        x: 77
-        y: 3
-        width: 55
-        height: 71
+        x: 75
+        y: 0
+        width: 75
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,7 +121,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79db233a5d27a3040970b0223943cd2f
+      spriteID: 4349b06380b277043a8a892aa21210bb
       vertices: []
       indices: 
       edges: []
@@ -141,10 +130,10 @@ TextureImporter:
       name: Cursor_2
       rect:
         serializedVersion: 2
-        x: 152
-        y: 5
-        width: 55
-        height: 58
+        x: 150
+        y: 0
+        width: 75
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,7 +141,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cadc2a5e046ee6043a350e467ce001e9
+      spriteID: 56db14c90686cbc4f96e5238f0401291
       vertices: []
       indices: 
       edges: []
@@ -160,16 +149,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b74718631b0754343a23078979c380a8
-=======
-  spriteSheet:
-    serializedVersion: 2
-    sprites: []
-    outline: []
-    physicsShape: []
-    bones: []
-    spriteID: cfbfcd237a40548cc837bc059060d350
->>>>>>> 9fcfb59e85b52e88e3401af7543cc5e03c376980
+    spriteID: 0b01166a87d5e50479ba588512b19bf1
     vertices: []
     indices: 
     edges: []
