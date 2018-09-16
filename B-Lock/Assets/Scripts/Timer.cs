@@ -37,14 +37,37 @@ public class Timer : MonoBehaviour {
             reachedZero = true;
         }
 
-        
-	}
+    }
 
-	public void DecreaseTime(int amount){
+
+
+    IEnumerator DoCheck()
+    {
+        Debug.Log("Got here");
+        Boolean temp = true;
+        for (double i = .5;i>=0;i-=.1)
+        {
+            if(temp)
+            {
+                timeRemainingText.color = Color.red;
+                temp = false;
+            }
+            else
+            {
+                timeRemainingText.color = new Color(0.3098039f, 0.7329956f, 0.9803922f, 1);
+                temp = true;
+            }
+            yield return new WaitForSeconds(.5f);
+        }
+    }
+
+    public void DecreaseTime(int amount){
         timeLeft -= amount;
+        StartCoroutine("DoCheck");
 	}
 
     void timesUp() {
         blockGameManager.GameOver(false);
     }
+
 }
