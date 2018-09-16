@@ -58,6 +58,9 @@ public class AdManager : MonoBehaviour {
 		//Get random game background image
 		randomIndex = Random.Range(0,gameBackgrounds[whichRatio].Length);
 		Sprite backgroundSprite = gameBackgrounds[whichRatio][randomIndex];
+	//	Rect backgroundRect = new Rect(backgroundSprite.rect.x, backgroundSprite.rect.y, spriteWidth, spriteLength);
+	//	backgroundSprite = Sprite.Create(backgroundSprite.texture, backgroundRect, backgroundSprite.pivot);
+
 
 		//Get random game prefab
 		randomIndex = Random.Range(0,adGamePrefabs.Length);
