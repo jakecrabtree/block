@@ -63,7 +63,7 @@ public class AdManager : MonoBehaviour {
 		randomIndex = Random.Range(0,adGamePrefabs.Length);
 		GameObject newAdObject = Instantiate(adGamePrefabs[randomIndex],position,Quaternion.identity);
 
-		newAdObject.AddComponent<Collider2D>();
+		newAdObject.AddComponent<BoxCollider2D>();
 
 		//Initialize Ad
 		newAdObject.GetComponent<Ad>().Initialize(randomAdImage,backgroundSprite);
