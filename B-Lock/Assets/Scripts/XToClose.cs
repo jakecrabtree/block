@@ -1,16 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class XToClose : Ad
 {
-    GameObject X;
-    public void OnClick()
+    GameObject xButton;
+    string xButtonPath = "Prefabs" + Path.DirectorySeparatorChar + "GamePieces" + Path.DirectorySeparatorChar + "XButton";
+    bool hasBeenInitialized = false;
+    protected void OnMouseDown()
     {
-        Debug.Log("Hi");
-        X = Instantiate(new GameObject());
-        X.AddComponent<XObject>();
-        X.transform.parent = transform;
-        X.GetComponent<XObject>().Initiaize();
+        base.OnMouseDown();
+        if (!hasBeenInitialized){
+            InitializeGame();
+            hasBeenInitialized = true;
+        }
+    }
+
+    void InitializeGame(){
+        xButton = Resources.Load<GameObject>(xButtonPath);
+        xButton = Instantiate(xButton, transform);
+        xButton.GetComponent<XObject>().Initialize(this);
     }
 }

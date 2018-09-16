@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class BlockGameManager : MonoBehaviour {
 
+	private static BlockGameManager manager = null;
 	Timer timer;
 	PageManager pageManager;
 
 	int timePenalty = 3;
 	int adPerLevelAmount = 1;
-	int adCount = 0;
+	int adCount;
 	int numLevels = 3;
 	int level = 0;
 
@@ -19,10 +20,18 @@ public class BlockGameManager : MonoBehaviour {
 	/// </summary>
 	void Awake()
 	{	
+		if (manager == null){
+			manager = this;
+		}
+		else if (manager != this){
+			Destroy(this.gameObject);
+		}
 		GameObject pageManagerObject = new GameObject();
 		pageManager = pageManagerObject.AddComponent<PageManager>();
 		Instantiate(pageManagerObject);
+		pageManager.Initialize(this);
 		pageManager.LoadPage(adPerLevelAmount);
+		adCount = adPerLevelAmount;
 	}
 
 	// Use this for initialization

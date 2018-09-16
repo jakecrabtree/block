@@ -7,13 +7,14 @@ using UnityEngine;
 
 public class AdManager : MonoBehaviour {
 
+	public static AdManager manager = null;
 	PageManager pageManager;
 	string adImagesPath = "Sprites" + Path.DirectorySeparatorChar + "Ads";
 	string gameBackgroundPath = "Sprites" + Path.DirectorySeparatorChar + 
 									"GameBackgrounds" + Path.DirectorySeparatorChar;
 	string adGamePrefabsPath = "Prefabs" + Path.DirectorySeparatorChar + 
 									"AdGames" + Path.DirectorySeparatorChar;
-	string[] gameBackgroundFolders = {"1x1", "1x5", "3x2"};
+	string[] gameBackgroundFolders = {"Squares", "Banners", "Rectangles"};
 	float[] adRatios = {1f, 0.2f, 1.333f};
 	Sprite[] adSprites;
 	Sprite[][] gameBackgrounds;
@@ -21,6 +22,12 @@ public class AdManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+		if (manager == null){
+			manager = this;
+		}
+		else if (manager != this){
+			Destroy(this.gameObject);
+		}
 		adSprites = Resources.LoadAll<Sprite>(adImagesPath);
 		int currentFolder = 0;
 		gameBackgrounds = new Sprite[gameBackgroundFolders.Length][];
@@ -63,8 +70,6 @@ public class AdManager : MonoBehaviour {
 		//Get random game background image
 		randomIndex = Random.Range(0,gameBackgrounds[whichRatio].Length);
 		Sprite backgroundSprite = gameBackgrounds[whichRatio][randomIndex];
-	//	Rect backgroundRect = new Rect(backgroundSprite.rect.x, backgroundSprite.rect.y, spriteWidth, spriteLength);
-	//	backgroundSprite = Sprite.Create(backgroundSprite.texture, backgroundRect, backgroundSprite.pivot);
 
 		//Get random game prefab
 		randomIndex = Random.Range(0,adGamePrefabs.Length);

@@ -8,36 +8,32 @@ public class XObject : MonoBehaviour {
 
     
     SpriteRenderer sr;
-    Sprite s;
+    Sprite[] xSprite;
+
+    Ad ad;
 
 	// Use this for initialization
-	void Start () {
-
-	}
-
-    public void Initiaize()
-    {
-        Debug.Log("Hi2");
-        transform.Translate(50, 50, 0);
-        s = Resources.Load<Sprite>("X_Button_0");
-        sr = GetComponent<SpriteRenderer>();
-        sr.sprite = s;
+    public void Initialize(Ad ad){
+        this.ad = ad;
     }
+	void Start () {
+        sr = gameObject.GetComponent<SpriteRenderer>();
+        xSprite = Resources.LoadAll<Sprite>("Sprites" + Path.DirectorySeparatorChar + "Buttons" + 
+                                        Path.DirectorySeparatorChar + "X_Button");
+	}
 
     void OnMouseEnter()
     {
-        s = Resources.Load<Sprite>("X_Button_1");
-        sr.sprite = s;
+        sr.sprite = xSprite[1];
     }
 
     void OnMouseExit()
     {
-        s = Resources.Load<Sprite>("X_Button_0");
-        sr.sprite = s;
+        sr.sprite = xSprite[0];
     }
 
     void OnMouseDown()
     {
-        transform.parent.GetComponent<XToClose>().OnSucceed();
+        ad.OnSucceed();
     }
 }
