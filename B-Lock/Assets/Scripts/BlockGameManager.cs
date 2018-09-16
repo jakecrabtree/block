@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class BlockGameManager : MonoBehaviour {
 
 	private static BlockGameManager manager = null;
+	string timerPath = "Prefabs" + Path.DirectorySeparatorChar + "Misc" + Path.DirectorySeparatorChar + "Canvas";
+	GameObject timerUIObject;
 	Timer timer;
 	PageManager pageManager;
 
@@ -32,11 +35,14 @@ public class BlockGameManager : MonoBehaviour {
 		pageManager.Initialize(this);
 		pageManager.LoadPage(adPerLevelAmount);
 		adCount = adPerLevelAmount;
+		timerUIObject = Instantiate(Resources.Load<GameObject>(timerPath));
+		timer = timerUIObject.GetComponentInChildren<Timer>();
+		timer.Initialize(this);
 	}
 
 	// Use this for initialization
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
@@ -61,7 +67,7 @@ public class BlockGameManager : MonoBehaviour {
 		pageManager.LoadPage(adPerLevelAmount);
 	}
 
-	void GameOver(bool win){
+	public void GameOver(bool win){
 		if (win){
 			Debug.Log("Win!");
 		}else{

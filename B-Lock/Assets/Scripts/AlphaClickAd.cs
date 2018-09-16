@@ -27,6 +27,6 @@ public class AlphaClickAd : Ad {
 	}
 
 	private void InitializeGame(){
-
+		
 	}
 }

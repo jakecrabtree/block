@@ -11,6 +11,12 @@ public class Timer : MonoBehaviour {
     Boolean reachedZero = false;
     Text timeRemainingText;
 
+    BlockGameManager blockGameManager;
+
+    public void Initialize(BlockGameManager blockGameManager){
+        this.blockGameManager = blockGameManager;
+    }
+
     // Use this for initialization
     void Start () {
         timeRemainingText = GetComponent<Text>();
@@ -39,6 +45,6 @@ public class Timer : MonoBehaviour {
 	}
 
     void timesUp() {
-     
+        blockGameManager.GameOver(false);
     }
 }
