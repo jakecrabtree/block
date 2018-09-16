@@ -15,12 +15,12 @@ public class XToClose : Ad
             InitializeGame();
             hasBeenInitialized = true;
         }
+        UpdateSortingOrder();
     }
 
     void InitializeGame(){
         xButton = Resources.Load<GameObject>(xButtonPath);
         xButton = Instantiate(xButton, transform);
-       // xButton.GetComponent<Renderer>().sortingOrder = gameObject.GetComponent<Renderer>().sortingOrder + 1;
         UpdateSortingOrder();
         xButton.GetComponent<XObject>().Initialize(this);
     }

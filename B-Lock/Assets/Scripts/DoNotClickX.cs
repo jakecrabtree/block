@@ -16,17 +16,18 @@ public class DoNotClickX : Ad {
             InitializeGame();
             hasBeenInitialized = true;
         }
+        UpdateSortingOrder();
     }
 
     void InitializeGame()
     {
         TeaPot = Resources.Load<GameObject>(TeaPotPathButtonPath);
         TeaPot = Instantiate(TeaPot, new Vector3(transform.position.x,transform.position.y,0),Quaternion.identity);
-        TeaPot.GetComponent<Renderer>().sortingOrder = gameObject.GetComponent<Renderer>().sortingOrder + 1;
+        UpdateSortingOrder();
         TeaPot.GetComponent<TeaPotObject>().Initialize(this);
     }
 
     public override void UpdateSortingOrder(){
-        
+        TeaPot.GetComponent<Renderer>().sortingOrder = gameObject.GetComponent<Renderer>().sortingOrder + 1;
     }
 }
