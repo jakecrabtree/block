@@ -13,7 +13,7 @@ public class BlockGameManager : MonoBehaviour {
 	Timer timer;
 	PageManager pageManager;
 
-	int timePenalty = 3;
+	int timePenalty = 4;
 	int adPerLevelAmount = 7;
 	int adCount;
 	int numLevels = 3;
